@@ -21,7 +21,7 @@ module receiver_fsm  #(
         S_WAIT_DEC = 3'd2,
         S_BUFFERING = 3'd3,
         S_NEXT = 3'd4,
-        S_DONE = 3'd5
+        S_DONE = 3'd5;
 
     reg [2:0] state;
     reg [ADDR_BITS-1:0] byte_idx; //temporary address counter

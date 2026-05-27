@@ -3,14 +3,14 @@ module spi_slave (
     input wire rst,
     input wire MOSI,
     input wire CS_bar,
-    output reg [7:0] received_data,
-    output reg data_ready
+    output reg data_ready,
+    output reg [7:0] received_data
 );
 
     reg [2:0] count; 
 
-    always @(posedge SCLK or posedge rst or posedge CS_bar) begin
-        if(rst || CS_bar) begin
+    always @(posedge SCLK or posedge rst) begin
+        if(rst) begin
             received_data <= 0;
             data_ready <= 0;
             count <= 0;
